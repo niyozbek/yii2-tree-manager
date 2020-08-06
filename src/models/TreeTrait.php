@@ -286,7 +286,7 @@ trait TreeTrait
                 /**
                  * @var Tree $child
                  */
-                $child->active = true;
+                $child->active = 1;
                 if (!$child->save()) {
                     /** @noinspection PhpUndefinedFieldInspection */
                     /** @noinspection PhpUndefinedVariableInspection */
@@ -299,7 +299,7 @@ trait TreeTrait
             }
         }
         if ($currNode) {
-            $this->active = true;
+            $this->active = 1;
             if (!$this->save()) {
                 /** @noinspection PhpUndefinedFieldInspection */
                 /** @noinspection PhpUndefinedVariableInspection */
@@ -337,7 +337,7 @@ trait TreeTrait
                 /** @noinspection PhpUndefinedMethodInspection */
                 $children = $this->children()->all();
                 foreach ($children as $child) {
-                    $child->active = false;
+                    $child->active = 0;
                     if (!$child->save()) {
                         /** @noinspection PhpUndefinedFieldInspection */
                         /** @noinspection PhpUndefinedVariableInspection */
@@ -350,7 +350,7 @@ trait TreeTrait
                 }
             }
             if ($currNode) {
-                $this->active = false;
+                $this->active = 0;
                 if (!$this->save()) {
                     /** @noinspection PhpUndefinedFieldInspection */
                     /** @noinspection PhpUndefinedVariableInspection */
